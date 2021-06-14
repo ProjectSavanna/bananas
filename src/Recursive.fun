@@ -14,6 +14,9 @@ functor Recursive (Template : TEMPLATE) :>
     val hide = Wrap
     val show = fn Wrap template => template
 
-    fun fold f = f o Template.map (fold f) o show
-    fun unfold f = hide o Template.map (unfold f) o f
+    infix |>
+    fun x |> f = f x
+
+    fun fold f x = x |> show |> Template.map (fold f) |> f
+    fun unfold f x = x |> f |> Template.map (unfold f) |> hide
   end
