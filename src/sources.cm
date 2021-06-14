@@ -1,0 +1,10 @@
+Library
+  signature TEMPLATE
+
+  functor Recursive
+is
+  $SMACKAGE/typeclasses/v1/sources.cm
+
+  TEMPLATE.sig
+
+  Recursive.fun
