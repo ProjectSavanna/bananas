@@ -1,0 +1,5 @@
+description: Recursion schemes
+maintainer: Harrison Grodin <hgrodin@andrew.cmu.edu>
+keywords: recursion recursive-types
+bug-url: https://github.com/ProjectSavanna/bananas/issues
+requires: typeclasses v1
