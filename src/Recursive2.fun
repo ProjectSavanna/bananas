@@ -1,37 +1,12 @@
 functor Recursive2 (
   structure Template1 : FUNCTOR2
   structure Template2 : FUNCTOR2
-) :>
-  sig
-    type t1
-     and t2
-
-    val hide : {
-      1 : (t1, t2) Template1.t -> t1,
-      2 : (t1, t2) Template2.t -> t2
-    }
-    and show : {
-      1 : t1 -> (t1, t2) Template1.t,
-      2 : t2 -> (t1, t2) Template2.t
-    }
-
-    val fold : {
-      1 : ('a1, 'a2) Template1.t -> 'a1,
-      2 : ('a1, 'a2) Template2.t -> 'a2
-    } -> {
-      1 : t1 -> 'a1,
-      2 : t2 -> 'a2
-    }
-
-    val unfold : {
-      1 : 'a1 -> ('a1, 'a2) Template1.t,
-      2 : 'a2 -> ('a1, 'a2) Template2.t
-    } -> {
-      1 : 'a1 -> t1,
-      2 : 'a2 -> t2
-    }
-  end =
+) :> RECURSIVE2 where Template1 = Template1 
+                  and Template2 = Template2 =
   struct
+    structure Template1 = Template1
+    structure Template2 = Template2
+
     datatype t1 = Wrap1 of (t1, t2) Template1.t
          and t2 = Wrap2 of (t1, t2) Template2.t
 

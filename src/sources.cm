@@ -1,10 +1,20 @@
 Library
+  signature RECURSIVE
   functor Recursive
+
+  signature RECURSIVE2
   functor Recursive2
+
+  signature RECURSIVE3
   functor Recursive3
 is
   $SMACKAGE/typeclasses/v1/sources.cm
 
+  RECURSIVE.sig
   Recursive.fun
+
+  RECURSIVE2.sig
   Recursive2.fun
+
+  RECURSIVE3.sig
   Recursive3.fun
