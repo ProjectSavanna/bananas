@@ -1,10 +1,10 @@
 Library
-  signature TEMPLATE
-
   functor Recursive
+  functor Recursive2
+  functor Recursive3
 is
   $SMACKAGE/typeclasses/v1/sources.cm
 
-  TEMPLATE.sig
-
   Recursive.fun
+  Recursive2.fun
+  Recursive3.fun
